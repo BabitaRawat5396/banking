@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 3%;
+}
+
+.form-container section {
+  margin: auto;
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 2.5rem;
+}
+
+.form-container section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.form button {
+  background-color: #ccc;
+  padding: 0.7rem 1.8rem;
+  border-radius: 1rem;
+  width: fit-content;
+  align-self: center;
+}
+.field {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.field input {
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  outline: none;
+}
+
+.loader {
+  border: 10px solid #f3f3f3; 
+  border-top: 10px solid #ccc; 
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Transactions CSS */
+.transactions {
+  width: 70%;
+  height: 30rem;
+  display: grid;
+  grid-template-columns: (repeat(4, 1fr));
+  background-color: #fff;
+  border-radius: 0.4rem;
+  border: 2px solid #ccc;
+  padding: 1rem;
+  gap: 1rem;
+  overflow-y: scroll;
+}
+
+.transactions__row {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.transactions__type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+
+.transactions__date {
+  padding-left: 1.3rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+
+.transactions__type--Deposit {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.transactions__type--Withdraw {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+.transactions__type--Checking {
+  background-image: linear-gradient(to top left, hsl(193, 52%, 46%), #5dd4e1);
+}
+
+.transactions__type--Savings {
+  background-image: linear-gradient(
+    to top left,
+    hsla(205, 78%, 53%, 0.954),
+    #7f58ff
+  );
+}
+
+.transactions__value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+
+/* Acount Details */
+
+.balance {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.balance__label {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: -0.2rem;
+}
+
+.balance__date {
+  font-size: 1.4rem;
+  color: #888;
+}
+
+.balance__value {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+
+/* amount operations CSS */
+.operation {
+  margin: 4rem auto;
+  width: 30%;
+  height: 30%;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  color: #333;
+}
+
+.operation h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+
+.operation--transfer {
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+.operation--deposit {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+.operation_form {
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.4rem 1rem;
+}
+
+/* operations form CSS */
+.form__input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #333;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form__label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form__btn {
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form__btn:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* custom scrollbar CSS*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3rem;
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
